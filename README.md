@@ -25,11 +25,11 @@ Choose exactly **K of n stocks** to maximise expected return and minimise risk. 
 
 ![12-stock comparison](figures/scaling_12_stocks.png)
 
-**6 stocks, choose 3 (20 valid portfolios).** Penalty QAOA learns the budget rule (P(feasible) ≈ 0.66 → 0.99 for p = 1 → 4) but not solution quality: its P(best) ≈ 0.05 equals random choice among valid portfolios, and the headline ratio r ≈ 0.97 is inflated because random sampling over all bitstrings already gives r ≈ 0.83.
+**6 stocks, choose 3 (20 valid portfolios).** Penalty QAOA learns the budget rule (P(feasible) ≈ 0.66 → 0.99 for p = 1 → 4) but not solution quality: its P(best) ≈ 0.05 equals random choice among valid portfolios, and the headline ratio r ≈ 0.94 to 0.97 is inflated because random sampling over all bitstrings already gives r ≈ 0.83.
 
 ![Depth sweep](figures/baseline_depth_sweep.png)
 
-The penalty strength matters: below λ ≈ 0.2 the global minimiser of the cost is no longer a valid portfolio, and below λ ≈ 0.02 almost every sample violates the budget.
+The penalty strength matters: between λ = 0.1 and 0.2 on our grid the global minimiser of the cost is no longer a valid portfolio, and below λ ≤ 0.02 almost every sample violates the budget.
 
 ![Lambda sweep](figures/baseline_lambda_sweep.png)
 
@@ -70,6 +70,6 @@ Runtime is a few minutes on a laptop. Plots are written to `figures/`.
 The problem statement and data generator come from the **Qiskit Fall Fest 2026** hackathon (IIIT-Delhi), Track 2 (tutorial by Benjamin Tirado; challenge adapted from the BasQ hackathon prompt by Angel Rodriguez, Benjamin Tirado and Miguel Angel Jimenez; text CC BY 4.0, code Apache 2.0).
 Method references: Farhi et al., arXiv:1411.4028 (QAOA); Hadfield et al., arXiv:1709.03489 (alternating-operator ansatz, XY mixers); Bärtschi and Eidenbenz, arXiv:1904.07358 (Dicke states); Zhou et al., arXiv:1812.01041 (angle interpolation).
 
-**AI assistance.** I used Claude (Anthropic) as a coding and writing assistant. It helped draft the notebook structure, the QUBO-to-Ising derivation, the exact NumPy QAOA simulator. I ran the full notebook myself and checked that the Qiskit circuits match the independent NumPy simulator. The problem statement and data generator come from the Qiskit Fall Fest 2026 challenge, as credited above.
+**AI assistance.** I used Claude (Anthropic) as a coding and writing assistant. It helped draft the notebook structure, the QUBO-to-Ising derivation and the exact NumPy QAOA simulator. I ran the full notebook myself and checked that the Qiskit circuits match the independent NumPy simulator. The problem statement and data generator come from the Qiskit Fall Fest 2026 challenge, as credited above.
 
 Code released under the Apache-2.0 licence (see `LICENSE`).
