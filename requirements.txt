@@ -1,0 +1,8 @@
+# Minimal requirements. Before publishing, pin the exact versions you ran, e.g.:
+#   pip freeze | grep -i -E "^(qiskit|numpy|scipy|matplotlib|jupyter|notebook)=="
+# and paste the output here (replace the lines below).
+qiskit==2.2.3
+numpy==2.4.0
+scipy==1.16.3
+matplotlib==3.10.8
+jupyter
